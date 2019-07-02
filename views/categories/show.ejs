@@ -1,0 +1,8 @@
+<h1><%= category.name %></h1>
+<hr />
+<p>
+<%category.posts.forEach(function(post){ %>
+    <p><%= post.content %></p>  
+<% }) %>
+</p>
+<hr />

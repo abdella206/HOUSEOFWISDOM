@@ -1,16 +1,22 @@
 {
   "development": {
-    "database": "express_auth_dev",
+    "username": "postgres",
+    "password": "pass",
+    "database": "houseofwisdom",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "database": "express_auth_test",
+    "username": "postgres",
+    "password": "pass",
+    "database": "houseofwisdom",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "database": "express_auth",
+    "username": "postgres",
+    "password": "pass",
+    "database": "houseofwisdom",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }

@@ -24,7 +24,7 @@ router.post('/signup', function(req, res) {
         successRedirect: '/',
         successFlash: 'Account created and logged in!'
       })(req,res);
-    }else {
+    } else {
       console.log("Email already in use!");
       req.flash('error', 'Email already in use!❌');
       res.redirect('/auth/signup');

@@ -1,4 +1,53 @@
 <h2>Profile Page</h2>
 
-<p>Hello,<%= currentUser.name%></p>
-<a href="/">Home</a>
+    <p>Hello, <%= currentUser.name%></p>
+        <a href="/">Home</a>
+
+            <h1>Share Your Wisdom🌌</h1>
+ 
+ 
+
+
+
+
+
+        <br />
+
+<form action="/posts" method="POST">
+     <input type="text" name='category' placeholder='Category Name'>
+        
+        <br />
+    
+    <br />
+        <textarea name="content" type="text"></textarea> 
+
+            <input type="submit" value="POST">
+
+                </form>
+
+
+
+<% user.posts.forEach(function(post) { %>
+    <div class="mainPost">
+    
+        <h4><%= post.content %></h4>
+   
+            </div>
+    
+                <hr />
+
+                    <% }); %>
+
+
+<h2>List of Categories</h2>
+<% categories.forEach(function(category) { %>
+  <div class="well">
+    <h2>
+      <a href="/category/<%= category.id %>"><%= category.name %></a>
+        </h2>
+            </div>
+                <% }); %>
+
+
+
+

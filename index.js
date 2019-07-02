@@ -46,7 +46,7 @@ sessionStore.sync();
 app.use(flash());
 
 //Link passport to the express session
-//MUST BE BELOW SESSION
+//MUST BE BELOW SESSION this is step #1
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -57,14 +57,30 @@ app.use(function(req, res, next){
 })
 
 app.get('/', function(req, res) {
+  console.log(req.user)
   res.render('index');
 });
 
+
+
 app.get('/profile', isLoggedIn, function(req, res) {
-  res.render('profile');
+  db.user.findOne({
+    where: {id: req.user.id},
+    include: [db.post]
+  }).then(function(user) {
+    db.category.findAll().then(function(categories) {
+      res.render('profile', {user, categories})
+    });
+    
+  });
 });
 
+
+
+
 app.use('/auth', require('./controllers/auth'));
+app.use('/posts', require('./controllers/post'));
+app.use('/category', require('./controllers/category'));
 
 var server = app.listen(process.env.PORT || 3000);
 
