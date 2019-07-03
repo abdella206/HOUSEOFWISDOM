@@ -8,10 +8,10 @@ module.exports = (sequelize, DataTypes) => {
   post.associate = function(models) {
     // associations can be defined here
     models.post.belongsTo(models.category)
-    models.post.belongsTo(models.user)
-    models.post.belongsToMany(models.tag, {through: "postsTags"})
-    models.post.belongsToMany(models.category, {through: 'categoriesPosts'});
+   // models.post.belongsTo(models.user)
+   // models.post.belongsToMany(models.tag, {through: "postsTags"})
+    //models.post.belongsToMany(models.category, {through: 'categoriesPosts'});
     
   };
   return post;
-};
+}

@@ -14,7 +14,7 @@
         <br />
 
 <form action="/posts" method="POST">
-     <input type="text" name='category' placeholder='Category Name'>
+     <input type="text" name='category' placeholder='Category Name' required>
         
         <br />
     
@@ -33,22 +33,21 @@
         <h4><%= post.content %></h4>
    
             </div>
-    <a href="/posts/<%=post.id %>/edit">EDIT THIS QUOTE</a>
+                 <a href="/posts/<%=post.id %>/edit">EDIT THIS QUOTE</a>
                 
-              
-<form method="POST" action="/posts/<%= post.id %>/?_method=DELETE">
-    <input type="submit" value="DELETE">
-</form>
-  
+                    <form method="POST" action="/posts/<%= post.id %>/?_method=DELETE">
+                    
+                        <input type="submit" value="DELETE">
+                        
+                            </form>
+    
+                                <hr />
                 
-                <hr />
-                
-
-                    <% }); %>
+                                    <% }); %>
 
 
 <h2>List of Categories</h2>
-<% categories.forEach(function(category) { %>
+<% user.categories.forEach(function(category) { %>
   <div class="well">
     <h2>
       <a href="/category/<%= category.id %>"><%= category.name %></a>

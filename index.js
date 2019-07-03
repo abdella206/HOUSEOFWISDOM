@@ -69,14 +69,12 @@ app.get('/', function(req, res) {
 app.get('/profile', isLoggedIn, function(req, res) {
   db.user.findOne({
     where: {id: req.user.id},
-    include: [db.post]
-  }).then(function(user) {
-    db.category.findAll().then(function(categories) {
-      res.render('profile', {user, categories})
+    include: [db.category,db.post]
+  }).then(function(user){ 
+    res.render('profile', {user})
     });
-    
   });
-});
+
 
 
 
