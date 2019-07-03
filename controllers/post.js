@@ -35,11 +35,10 @@ router.post('/', function (req, res) {
 
 
 router.get('/:id/edit', function (req, res) {
-    
     db.post.findOne({
         where:{id: parseInt(req.params.id)},
     }).then(function(post){
-        res.redirect('/profile', {post});
+        res.render('edit', {post});
     });
 
    
@@ -48,16 +47,32 @@ router.get('/:id/edit', function (req, res) {
 
 
 router.put('/:id', function (req, res) {
+    console.log(req.body)
+    
     db.post.update({
 
         content: req.body.content
     }, {
             where: { id: parseInt(req.params.id) }
         }).then(function (post) {
-            res.redirect('/profile/' + req.params.id)
+            res.redirect('/profile')
         })
 
 })
+
+
+
+
+
+router.delete('/:id', function(req, res){
+
+    db.post.destroy({
+    where: {id: parseInt(req.params.id)}
+
+}).then (function(post){
+    res.redirect('/profile')
+});
+});
 
 
 

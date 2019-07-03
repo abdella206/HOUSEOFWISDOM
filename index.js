@@ -12,6 +12,8 @@ const helmet = require('helmet');
 //this is only used by the session store
 const db = require('./models');
 
+const methodOverride = require('method-override');
+
 const app = express();
 
 //this line makes the session use sequelize to write session data to a postgres table
@@ -29,6 +31,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + "/public"));
 app.use(ejsLayouts);
 app.use(helmet());
+app.use(methodOverride('_method'));
 
 //Configures express-session middleware
 app.use(session({
