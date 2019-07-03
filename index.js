@@ -12,6 +12,8 @@ const helmet = require('helmet');
 //this is only used by the session store
 const db = require('./models');
 
+const axios = require('axios');
+
 const methodOverride = require('method-override');
 
 const app = express();
@@ -75,6 +77,13 @@ app.get('/profile', isLoggedIn, function(req, res) {
     });
   });
 
+  
+app.get('/api', function (req, res) {
+  axios.get('http://quotes.rest/quote/categories.json?start=300')
+      .then(function (result) {
+         // res.json(results);
+      })
+});
 
 
 

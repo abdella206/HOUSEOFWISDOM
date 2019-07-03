@@ -12,11 +12,10 @@ const db = require('../models');
 router.post('/', function (req, res) {
     db.category.findOrCreate({
         where: {
-            name: req.body.category
-        },
-        defaults: {
+            name: req.body.category,
             userId: req.user.id
         }
+       
     }).spread(function(category, created) {
         category.createPost({
             content: req.body.content,

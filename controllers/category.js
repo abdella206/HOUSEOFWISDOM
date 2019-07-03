@@ -14,6 +14,23 @@ router.get('/', function(req, res) {
 });
 
 
+
+
+
+
+
+router.delete('/:id', function(req, res){
+
+    db.category.destroy({
+    where: {id: parseInt(req.params.id)}
+
+}).then (function(category){
+    res.redirect('/profile')
+});
+});
+
+
+
 // //POST /categories - post them
 // router.post('/', function(req, res){
 //     db.post.findByPk(parseInt(req.body.postId)).then(function(post) {
