@@ -1,22 +1,24 @@
-<div id="backgroundP">
+
     
 
 <a href="/">Home</a>
-<h2>Profile Page</h2>
+<h2>Welcome, <%= currentUser.name%></h2>
 
-<p>Hello, <%= currentUser.name%></p>
 
-<h1>Share Your Wisdom🌌</h1>
+<div id="postForm">
+<h1>🌌Share Your Wisdom🌌</h1>
 <br />
 
-<form action="/posts" method="POST">
+<form id="formP"  action="/posts" method="POST">
     <input type="text" name='category' placeholder='Category Name' required>
-    <br />
-    <br />
+    <br>
+    <br>
+    
     <textarea name="content" type="text"></textarea> 
     
     <input class="buttons" type="submit" value="POST" placeholder="be inspired">
 </form>
+</div>
 
     <div id="api">
      <h3 id="postText"><%= data.quoteText %></h3>
@@ -54,6 +56,6 @@
 
 
 
-</div>
+
     
 
