@@ -1,12 +1,12 @@
-<body id="backgroundP">
+<div id="backgroundP">
     
 
 <a href="/">Home</a>
 <h2>Profile Page</h2>
 
-<p class="postForm">Hello, <%= currentUser.name%></p>
+<p>Hello, <%= currentUser.name%></p>
 
-<h1 class="postForm">Share Your Wisdom🌌</h1>
+<h1>Share Your Wisdom🌌</h1>
 <br />
 
 <form action="/posts" method="POST">
@@ -15,26 +15,25 @@
     <br />
     <textarea name="content" type="text"></textarea> 
     
-    <input type="submit" value="POST" placeholder="be inspired">
+    <input class="buttons" type="submit" value="POST" placeholder="be inspired">
 </form>
 
-     <h3><%= data.quoteText %></h3>
-      <button type="submit"  onClick="refreshPage()">Refresh Button</button>
-     
-        
-<% user.posts.forEach(function(post) { %>
-    <div class="mainPost">
+    <div id="api">
+     <h3 id="postText"><%= data.quoteText %></h3>
+      <button class="buttons" type="submit"  onClick="refreshPage()">New Quote</button>
+    </div>
+    
+    <% user.posts.forEach(function(post) { %>
+    
+<div id="mainPost">
 
         <h4><%= post.content %></h4>
-        
-   
-
         <a href="/posts/<%=post.id %>/edit">EDIT THIS QUOTE</a>
         <form method="POST" action="/posts/<%= post.id %>/?_method=DELETE">
-            <input type="submit" value="DELETE">    
+            <input class="buttons" type="submit" value="DELETE">    
         </form>
-      
-    </div>
+      <hr />
+</div>
 <% }); %>
 
 <div class="cat">
@@ -46,7 +45,7 @@
                 <a href="/category/<%= category.id %>"><%= category.name %></a>
             </h2>
             <form method="POST" action="/category/<%= category.id %>/?_method=DELETE">
-                <input type="submit"  value="DELETE">
+                <input class="buttons" type="submit"  value="DELETE">
             </form>
         </div>
     <% }); %>
@@ -55,6 +54,6 @@
 
 
 
-</body>
+</div>
     
 

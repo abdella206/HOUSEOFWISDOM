@@ -27,12 +27,13 @@ document.addEventListener('DOMContentLoaded', function (e) {
 
             // fallingQuotes = document.getElementById('fall')
             var newFallingQuotes = document.createElement('p');
+            newFallingQuotes.classList.add("fallingQ")
             let randomQuotes = quotes[Math.floor(Math.random() * quotes.length)];
             newFallingQuotes.textContent = randomQuotes;
             fallingQuotes.appendChild(newFallingQuotes);
         }
 
-    }, 1000)
+    }, 5000)
 
 
 
