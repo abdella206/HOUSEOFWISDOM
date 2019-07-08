@@ -55,37 +55,79 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(function(req, res, next){
+app.use(function (req, res, next) {
   res.locals.alerts = req.flash();
   res.locals.currentUser = req.user;
   next();
 })
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
   console.log(req.user)
   res.render('index');
 });
 
 
 
-app.get('/profile', isLoggedIn, function(req, res) {
+app.get('/profile', isLoggedIn, function (req, res) {
   db.user.findOne({
-    where: {id: req.user.id},
-    include: [db.category,db.post]
-  }).then(function(user){ 
-    res.render('profile', {user})
-    });
-  });
+    where: { id: req.user.id },
+    include: [db.category, db.post]
+  })
+    .then(function (user) {
+      return axios.get('http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json')
+        .then(function (result) {
+          res.render('profile', { user, data: result.data,  testing  })
+        })
+    })
 
-  
-app.get('/api', function (req, res) {
-  axios.get('http://quotes.rest/quote/categories.json?start=300')
-      .then(function (result) {
-         // res.json(results);
-      })
 });
 
 
+function testing() {
+  console.log('this is testing')
+  return {
+      quoteText: 'this is not new',
+  }
+}
+
+
+
+// app.get('/', function (req, res) {
+//   // Use request to call the API
+
+//     .then(function (result) {
+//       // result.data;
+//       res.render('profile', result.data);
+//     })
+// });
+
+
+
+
+
+// app.get('/profile', function (req, res) {
+//   // Use request to call the API
+//   axios.get('http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json')
+//     .then(function (result) {
+//       res.render('profile', {result: result.data})
+//       .catch( e => res.json({e}))
+//      // res.send(result.data);
+//     })
+// });
+
+
+
+
+
+// // GET / - main index of site
+// app.get('/profile', function(req, res) {
+//   var quoteUrl = 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1';
+//   // Use request to call the API
+//   axios.get(quoteUrl).then( function(apiResponse) {
+//     var quote = apiResponse.data.results;
+//     res.render('profile', { quote });
+//   })
+// });
 
 
 app.use('/auth', require('./controllers/auth'));

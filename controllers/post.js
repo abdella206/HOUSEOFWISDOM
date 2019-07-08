@@ -15,17 +15,16 @@ router.post('/', function (req, res) {
             name: req.body.category,
             userId: req.user.id
         }
-       
-    }).spread(function(category, created) {
+    }).spread(function (category, created) {
         category.createPost({
             content: req.body.content,
             userId: req.user.id
         }).then(function (post) {
-                res.redirect("/profile");
-            })
+            res.redirect("/profile");
         })
-        
-    });
+    })
+
+});
 
 
 
@@ -34,19 +33,19 @@ router.post('/', function (req, res) {
 
 router.get('/:id/edit', function (req, res) {
     db.post.findOne({
-        where:{id: parseInt(req.params.id)},
-    }).then(function(post){
-        res.render('edit', {post});
+        where: { id: parseInt(req.params.id) },
+    }).then(function (post) {
+        res.render('edit', { post });
     });
 
-   
+
 });
 
 
 
 router.put('/:id', function (req, res) {
     console.log(req.body)
-    
+
     db.post.update({
 
         content: req.body.content
@@ -62,14 +61,14 @@ router.put('/:id', function (req, res) {
 
 
 
-router.delete('/:id', function(req, res){
+router.delete('/:id', function (req, res) {
 
     db.post.destroy({
-    where: {id: parseInt(req.params.id)}
+        where: { id: parseInt(req.params.id) }
 
-}).then (function(post){
-    res.redirect('/profile')
-});
+    }).then(function (post) {
+        res.redirect('/profile')
+    });
 });
 
 

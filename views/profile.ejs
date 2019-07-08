@@ -1,60 +1,60 @@
+<body id="backgroundP">
+    
+
+<a href="/">Home</a>
 <h2>Profile Page</h2>
 
-    <p>Hello, <%= currentUser.name%></p>
-        <a href="/">Home</a>
+<p class="postForm">Hello, <%= currentUser.name%></p>
 
-            <h1>Share Your Wisdom🌌</h1>
- 
- 
-
-
-
-
-
-        <br />
+<h1 class="postForm">Share Your Wisdom🌌</h1>
+<br />
 
 <form action="/posts" method="POST">
-     <input type="text" name='category' placeholder='Category Name' required>
-        
-        <br />
-    
+    <input type="text" name='category' placeholder='Category Name' required>
     <br />
-        <textarea name="content" type="text"></textarea> 
+    <br />
+    <textarea name="content" type="text"></textarea> 
+    
+    <input type="submit" value="POST" placeholder="be inspired">
+</form>
 
-            <input type="submit" value="POST">
-
-                </form>
-
-
-
+     <h3><%= data.quoteText %></h3>
+      <button type="submit"  onClick="refreshPage()">Refresh Button</button>
+     
+        
 <% user.posts.forEach(function(post) { %>
     <div class="mainPost">
-    
+
         <h4><%= post.content %></h4>
+        
    
-            </div>
-                 <a href="/posts/<%=post.id %>/edit">EDIT THIS QUOTE</a>
-                
-                    <form method="POST" action="/posts/<%= post.id %>/?_method=DELETE">
-                    
-                        <input type="submit" value="DELETE">
-                        
-                            </form>
+
+        <a href="/posts/<%=post.id %>/edit">EDIT THIS QUOTE</a>
+        <form method="POST" action="/posts/<%= post.id %>/?_method=DELETE">
+            <input type="submit" value="DELETE">    
+        </form>
+      
+    </div>
+<% }); %>
+
+<div class="cat">
+
+    <h2>List of Categories</h2>
+    <% user.categories.forEach(function(category) { %>
+        <div>
+            <h2 id="category">
+                <a href="/category/<%= category.id %>"><%= category.name %></a>
+            </h2>
+            <form method="POST" action="/category/<%= category.id %>/?_method=DELETE">
+                <input type="submit"  value="DELETE">
+            </form>
+        </div>
+    <% }); %>
+</div>
+
+
+
+
+</body>
     
-                                <hr />
-                
-                                    <% }); %>
-
-
-<h2>List of Categories</h2>
-<% user.categories.forEach(function(category) { %>
-  <div class="well">
-    <h2>
-      <a href="/category/<%= category.id %>"><%= category.name %></a>
-        </h2>
-            </div>
-                <% }); %>
-
-
-
 
