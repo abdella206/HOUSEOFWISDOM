@@ -1,13 +1,12 @@
-/* 
-.backgroundM{
+
+body{
   background-size: cover;
   background-attachment: fixed;
-  background-color: aquamarine;
+  background-image: url('../img/space.jpg');
   color: gold;
   min-height: 100vh;
   min-width: 100vw;
-
-} */
+}
 
 #mainTitle{
   display: flex;
@@ -48,10 +47,6 @@
   }
 
 
- 
-h3{
-
-}
 
 
 input{
@@ -78,7 +73,7 @@ input{
 .fall{
   color:gold;
   background-color: rgba(15, 15, 15, 0.5);
-  width: 100%;
+  width: 50%;
   text-align: center;
  
   
@@ -93,23 +88,71 @@ input{
 
 #mainPost{
   text-align: center;
+  background-color: rgba(15, 15, 15, 0.9);
+  max-width: 70%;
+  margin: 0 auto;
+  
 }
 
 #api{
   text-align: center;
-  background-color: rgba(15, 15, 15, 0.7);
+  background-color: rgba(15, 15, 15, 0.5);
   color: goldenrod;
+  max-width: 70%;
+  margin: 0 auto;
+  
   
   
 }
 
 
-.fallingQ{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+.fallTwo {
+  width: 50%;
+  height: 100px;
+  background-color: rgba(15, 15, 15, 0.5);
+  position: relative;
+  /* Safari 4.0 - 8.0 */
+  -webkit-animation-name: fallTwo;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  /* Standard syntax */
+  animation-name: fallTwo;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes fallTwo {
+  0%   {background-color:rgba(20, 19, 19, 0.5); left:0px; top:0px;}
+  25%  {background-color:rgba(0, 145, 241, 0.5); left:200px; top:0px;}
+  50%  {background-color:rgba(20, 19, 19, 0.5); left:200px; top:200px;}
+  75%  {background-color:rgba(20, 19, 19, 0.5); left:0px; top:200px;}
+  100% {background-color:rgba(20, 19, 19, 0.5); left:0px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes fallTwo {
+  0%   {background-color:rgba(20, 19, 19, 0.5); left:0px; top:0px;}
+  25%  {background-color:rgba(20, 19, 19, 0.5); left:200px; top:0px;}
+  50%  {background-color:rgba(20, 19, 19, 0.5); left:200px; top:200px;}
+  75%  {background-color:rgba(20, 19, 19, 0.5); left:0px; top:200px;}
+  100% {background-color:rgba(20, 19, 19, 0.5); left:0px; top:0px;}
+}
+
+.fallTwo{
+  text-align: center;
+}
+
+
+
+
+
 
 /* 
 
@@ -120,4 +163,8 @@ input{
   color: gold;
   min-height: 100vh;
   min-width: 100vw;
-} */
+}  */
+
+
+
+

@@ -16,6 +16,8 @@ let quotes =
 
 let fallingQuotes = document.getElementsByClassName('fall')[0];
 
+let fallingQuotesTwo = document.getElementsByClassName('fallTwo')[0];
+
 
 
 document.addEventListener('DOMContentLoaded', function (e) {
@@ -23,17 +25,20 @@ document.addEventListener('DOMContentLoaded', function (e) {
 
     setInterval(function () {
         fallingQuotes.textContent = '';
+        fallingQuotesTwo.textContent = '';
         for (var i = 0; quotes.length > i; i++) {
 
             // fallingQuotes = document.getElementById('fall')
             var newFallingQuotes = document.createElement('p');
-            newFallingQuotes.classList.add("fallingQ")
+            var newFallingQuotesTwo = document.createElement('p');
             let randomQuotes = quotes[Math.floor(Math.random() * quotes.length)];
             newFallingQuotes.textContent = randomQuotes;
+            newFallingQuotesTwo.textContent = randomQuotes;
             fallingQuotes.appendChild(newFallingQuotes);
+            fallingQuotesTwo.appendChild(newFallingQuotesTwo);
         }
 
-    }, 5000)
+    }, 1000)
 
 
 
