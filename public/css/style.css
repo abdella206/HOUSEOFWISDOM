@@ -9,7 +9,7 @@
 }  */
 
 
-#firstPage{
+#firstPages{
   background-size: cover;
   background-attachment: fixed;
   background-image: url('../img/space.jpg');
@@ -21,9 +21,7 @@
   background-size: cover;
   background-attachment: fixed;
   background-image: url('../img/galaxy.jpg');
-  
-  color: gold;
-}
+  }
 
 #pageLast{
   background-size: cover;
@@ -103,10 +101,23 @@ input{
   text-align: center;
   border-radius: 20px;
   height: 10%;
+  
  
   
 }
 
+.pageTwo{
+  color: goldenrod;
+}
+
+a{
+  color: gold;
+  background-color: black;
+  border-color: black;
+  border: 1px solid black;
+  width: 5%;
+  height: 5%;
+}
 
 .buttons{
   color: gold;
@@ -120,6 +131,7 @@ input{
   max-width: 50%;
   margin: 0 auto;
   border-radius: 20px;
+  color:goldenrod;
   }
 
 #postForm{
@@ -146,7 +158,7 @@ input{
 }
 
 
-.fallTwo {
+.fallTwos {
   width: 50%;
   height: 100px;
  
@@ -187,11 +199,12 @@ input{
 
 .fallTwo{
   text-align: center;
-  margin: 0px auto;
+  margin: 0 auto;
   background-color: rgba(15, 15, 15, 0.5);
   border-radius: 20px;
   height: 10%;
-  width: 50%;
+  width: 60%;
+  color: gold;
 }
 
 

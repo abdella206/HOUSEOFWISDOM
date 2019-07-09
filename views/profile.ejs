@@ -4,11 +4,11 @@
     
 
 <a href="/">Home</a>
-<h2>Welcome, <%= currentUser.name%></h2>
+<h2 class="pageTwo">Welcome, <%= currentUser.name%></h2>
 
 
 <div id="postForm">
-<h1>🌌 Share Your Wisdom 🌌</h1>
+<h1 class="pageTwo">🌌 Share Your Wisdom 🌌</h1>
 <br />
 
 <form id="formP"  action="/posts" method="POST">
@@ -42,7 +42,7 @@
 
 <div class="cat">
 
-    <h2>List of Categories</h2>
+    <h2 class="pageTwo">List of Categories</h2>
     <% user.categories.forEach(function(category) { %>
         <div>
             <h2 id="category">
