@@ -2,11 +2,35 @@
  body{
   background-size: cover;
   background-attachment: fixed;
-  background-image: url('../img/space.jpg');
+  background-image: url('../img/night2.jpg');
   color: gold;
   min-height: 100vh;
   min-width: 100vw;
 }  */
+
+
+#firstPage{
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url('../img/space.jpg');
+  color: gold;
+
+}
+
+#secondPage{
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url('../img/galaxy.jpg');
+  
+  color: gold;
+}
+
+#pageLast{
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url('../img/night2.jpg');
+  color: gold;
+}
 
 #mainTitle{
   display: flex;
@@ -31,7 +55,7 @@
     -webkit-animation-duration: 30s;  /* Safari 4.0 - 8.0 */  
     -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
     animation-name: fall;
-    animation-duration: 10s;  
+    animation-duration: 7s;  
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
    
@@ -77,6 +101,7 @@ input{
   background-color: rgba(15, 15, 15, 0.5);
   width: 50%;
   text-align: center;
+  border-radius: 20px;
  
   
 }
@@ -91,10 +116,11 @@ input{
 #mainPost{
   text-align: center;
   background-color: rgba(15, 15, 15, 0.5);
-  max-width: 70%;
+  max-width: 50%;
   margin: 0 auto;
-  
-}
+  border-radius: 20px;
+  }
+
 #postForm{
   text-align: center;
  
@@ -112,6 +138,7 @@ input{
   color: goldenrod;
   max-width: 70%;
   margin: 0 auto;
+  border-radius: 20px;
   
   
   
@@ -153,7 +180,7 @@ input{
   0%   {background-color:rgba(20, 19, 19, 0.5); left:0px; top:0px;}
   25%  {background-color:rgba(20, 19, 19, 0.5); left:200px; top:0px;}
   50%  {background-color:rgba(20, 19, 19, 0.5); left:200px; top:200px;}
-  75%  {background-color:rgba(239, 243, 8, 0.5); left:0px; top:200px;}
+  75%  {background-color:rgba(0, 0, 0, 0.5); left:0px; top:200px;}
   100% {background-color:rgba(20, 19, 19, 0.5); left:0px; top:0px;}
 }
 
@@ -161,6 +188,7 @@ input{
   text-align: center;
   margin: 0px auto;
   background-color: rgba(15, 15, 15, 0.5);
+  border-radius: 20px;
 }
 
 
