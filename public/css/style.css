@@ -21,6 +21,7 @@
   background-size: cover;
   background-attachment: fixed;
   background-image: url('../img/galaxy.jpg');
+  
   }
 
 #pageLast{
@@ -40,7 +41,13 @@
   font-size: 100px;
   background-color: rgba(15, 15, 15, 0.3);
 
- 
+}
+
+#editPage{
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url('../img/galaxy.jpg');
+  color: gold;
 }
 
 
