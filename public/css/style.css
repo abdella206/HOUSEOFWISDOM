@@ -47,7 +47,7 @@
 
 
  .fall{
-    width: 400%;
+    width: 300%;
     height: 100px;
     
     position: relative;
@@ -58,7 +58,7 @@
     animation-duration: 7s;  
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
-   
+    animation-direction: alternate;
   }
  
 
@@ -69,7 +69,7 @@
   
   @keyframes fall {
     from {top: 0px;}
-    to {top: 500px;}
+    to {top: 400px;}
   }
 
 
@@ -102,6 +102,7 @@ input{
   width: 50%;
   text-align: center;
   border-radius: 20px;
+  height: 10%;
  
   
 }
@@ -156,14 +157,14 @@ input{
   -webkit-animation-timing-function: linear;
   -webkit-animation-delay: 1s;
   -webkit-animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
+  
   /* Standard syntax */
   animation-name: fallTwo;
   animation-duration: 10s;
   animation-timing-function: linear;
   animation-delay: 1s;
   animation-iteration-count: infinite;
-  animation-direction: alternate;
+  
 }
 
 /* Safari 4.0 - 8.0 */
@@ -189,6 +190,8 @@ input{
   margin: 0px auto;
   background-color: rgba(15, 15, 15, 0.5);
   border-radius: 20px;
+  height: 10%;
+  width: 50%;
 }
 
 

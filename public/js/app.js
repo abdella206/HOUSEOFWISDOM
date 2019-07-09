@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
             fallingQuotesTwo.appendChild(newFallingQuotesTwo);
         }
 
-    }, 1000)
+    }, 4000)
 
 
 
