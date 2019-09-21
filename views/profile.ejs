@@ -23,8 +23,8 @@
 </div>
 
     <div id="api">
-     <h3 id="postText"><%= data.quoteText %></h3>
-      <button class="buttons" type="submit"  onClick="refreshPage()">New Quote</button>
+    <h3 id="postText"><%= data.quoteText %></h3>
+    <button class="buttons" type="submit"  onClick="refreshPage()">New Quote</button>
     </div>
     
     <% user.posts.forEach(function(post) { %>
@@ -36,7 +36,7 @@
         <form method="POST" action="/posts/<%= post.id %>/?_method=DELETE">
             <input class="buttons" type="submit" value="DELETE">    
         </form>
-      
+
 </div>
 <% }); %>
 
