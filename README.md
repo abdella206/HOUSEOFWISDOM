@@ -37,7 +37,6 @@ Welcome to the house of wisdom! on my page you can write your quotes, motivation
 
 
 
-![FireShot Capture 002 - 21 Game! - ](https://user-images.githubusercontent.com/25184204/59524642-4de49300-8e89-11e9-8b1a-6c3f9871e7af.png)
 
 
 
